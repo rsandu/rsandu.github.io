@@ -11,10 +11,10 @@ $(document).ready(function(){
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'http://puu.sh/iIJqP/7ca580ba60.wav')
     // Load it
-    $.get();
-    audioElement.addEventListener("load", function() {
+    $.get(); // Gets page elements (Read up more)
+    audioElement.addEventListener("load", function() { // On site load, adds function
         audioElement.play();
-    }, true);
+    }, true); // Bubbled
 
     $("#johncena").click(function(){
         audioElement.play();
@@ -23,6 +23,9 @@ $(document).ready(function(){
 var jcena = {};
 jcena["yell"] = new Audio();
 jcena["yell"].src = ""
+
+//// END OF JOHN CENA AUDIO FILE SETUP
+
 $("body").append($overlay);
 
 $("#welcome").click(function(){
