@@ -53,6 +53,7 @@ $(document).keydown(function(e){
             break;
         case 38:
             $mover.css('top', $mover.offset().top - 10);
+            e.preventDefault();
             break;
         case 39:
             $mover.css('left', $mover.offset().left + 10);
