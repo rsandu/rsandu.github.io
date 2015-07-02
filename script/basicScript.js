@@ -2,10 +2,8 @@
  * Created by Razvanel on 6/30/2015.
  */
 var countEr = 0;
+var isAnimating;
 
-var $overlay = $('<div id = "overlay"></div>');
-var $image = $('<img src="http://www.wwe.com/f/styles/superstar_bio/public/talent/bio/2015/01/johncena_bio_20150119.png"/>');
-var $mover = $('#mover');
 
 ///// SETTING THE JOHN CENA AUDIO FILE
 
@@ -63,4 +61,25 @@ $(document).keydown(function(e){
             $mover.css('top', $mover.offset().top + 10);
             break;
     }
-});
+})
+
+//// END OF MOVE BLOCK AND START OF CD BLOCK
+
+$("body").append($tester);
+$tester.append($cooldown);
+$tester.data("cd", 1000);
+
+$tester.click(function(){
+    check()
+})
+
+function check() {
+    if(!isAnimating){
+        isAnimating = true;
+        $cooldown.width("100%").stop(true, true).animate({width: '0%'}, 1000, 'linear', function () {
+            isAnimating = false;
+        });
+    }
+}
+
+//// END OF CD BLOCK
