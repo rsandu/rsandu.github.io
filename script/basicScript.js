@@ -1,10 +1,6 @@
 /**
  * Created by Razvanel on 6/30/2015.
  */
-var countEr = 0;
-var isAnimating;
-
-
 ///// SETTING THE JOHN CENA AUDIO FILE
 
 $(document).ready(function(){
@@ -76,10 +72,24 @@ $tester.click(function(){
 function check() {
     if(!isAnimating){
         isAnimating = true;
+        addMoney();
         $cooldown.width("100%").stop(true, true).animate({width: '0%'}, 1000, 'linear', function () {
             isAnimating = false;
         });
     }
 }
 
+function income() {
+    var interval = setInterval(function(){
+        inCome += inCrease;
+        $cooldown.text(inCome)
+    }, 1000)
+}
+
+income();
+
+function addMoney(){
+    inCrease += 1;
+    inCome += 5;
+}
 //// END OF CD BLOCK

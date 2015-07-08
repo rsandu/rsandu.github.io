@@ -7,3 +7,7 @@ var $image = $('<img src="http://www.wwe.com/f/styles/superstar_bio/public/talen
 var $mover = $('#mover');
 var $tester = $('<div class = "tester"></div>');
 var $cooldown = $('<div class = "cooldown"></div>');
+var countEr = 0;
+var isAnimating;
+var inCome = 0;
+var inCrease = 1;
